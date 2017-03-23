@@ -30,17 +30,17 @@ function getExercisesByGroup(numOfExercises, idInString) {
 }
 
 let tricepsRoutine = getExercisesByGroup(3, '16');
-let chestRoutine = getExercisesByGroup(4, '11');
-let shouldersRoutine = getExercisesByGroup(4, '12');
-let bicAndForamsRoutine = function () {
-  return Promise.all([getExercisesByGroup(3, '7'), getExercisesByGroup(1, '13')])
-  .then(([resultBiceps, resultForArms]) => {
-    let newArray = resultBiceps.concat(resultForArms);
-    console.log(newArray);
-    return newArray;
-  })
-  .catch((err) => {
-    throw err;
-  });
-}
-bicAndForamsRoutine();
+// let chestRoutine = getExercisesByGroup(4, '11');
+// let shouldersRoutine = getExercisesByGroup(4, '12');
+// let bicAndForamsRoutine = function () {
+//   return Promise.all([getExercisesByGroup(3, '7'), getExercisesByGroup(1, '13')])
+//   .then(([resultBiceps, resultForArms]) => {
+//     let newArray = resultBiceps.concat(resultForArms);
+//     console.log(newArray);
+//     return newArray;
+//   })
+//   .catch((err) => {
+//     throw err;
+//   });
+// }
+// bicAndForamsRoutine();
