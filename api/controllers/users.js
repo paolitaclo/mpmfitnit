@@ -28,15 +28,16 @@ function addNewUser(req, res) {
        user_intentions: req.body.user_intentions
     })
     .save()
-    .then((user) => {
-      delete user.hashed_password;
-      return user;
-    })
-    .then((user) => {
-      console.log(user);
+    // .then((user) => {
+    //   return user;
+    // })
+    .then((addedUser) => {
+      console.log(JSON.stringify(addedUser));
+      delete addedUser.hashed_password;
+      delete addedUser.updated_at;
+      delete addedUser.created_at;
       res.setHeader('Content-Type', 'application/json');
-      res.end(JSON.stringify(user));
-
+      res.end(JSON.stringify(addedUser));
     })
     .catch(function (err) {
       res.setHeader("Content-Type", "application/json")

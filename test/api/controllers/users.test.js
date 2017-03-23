@@ -69,8 +69,8 @@ describe('users routes', () => {
         user_intentions: 'lose weight'
       })
       .expect((res) => {
-        delete res.body.createdAt;
-        delete res.body.updatedAt;
+        delete res.body.created_at;
+        delete res.body.updated_at;
       })
       .expect(200, {
         id: 2,
