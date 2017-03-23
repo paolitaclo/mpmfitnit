@@ -200,6 +200,7 @@ paths:
             type: "string"
         "400":
           description: "Invalid email or password"
+      x-swagger-router-controller: "login"
   /exercises/types:
     get:
       description: "returns all exercise types"
