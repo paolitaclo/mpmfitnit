@@ -8,7 +8,8 @@ var url = require('url');
 
 
 module.exports.getAllExercises = function(req, res, next) {
-  Exercises.where('id', '<', '25').fetchAll({ withRelated: ['muscle', 'type', 'equipment'] })
+  Exercises.where('id', '<', '25')
+  .fetchAll({ withRelated: ['muscle', 'type', 'equipment'] })
   .then((exerciseList) => {
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify(exerciseList));
@@ -20,7 +21,8 @@ module.exports.getAllExercises = function(req, res, next) {
 };
 
 module.exports.findExerciseById = function(req, res, next) {
-  Exercises.where('id', req.swagger.params.id.value).fetch({ withRelated: ['muscle', 'type', 'equipment'] })
+  Exercises.where('id', req.swagger.params.id.value)
+  .fetch({ withRelated: ['muscle', 'type', 'equipment'] })
   .then((specificExercise) => {
     if(!specificExercise) {
       res.sendStatus(404);
